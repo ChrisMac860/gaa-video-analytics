@@ -29,7 +29,7 @@ tagged events behind it.
 | Turnovers won/conceded, frees won, cards | Human-tagged | ✅ |
 | Timeline with running score, timestamped video evidence | Computed from events | ✅ |
 | Printable match report (Save as PDF), CSV and JSON export/import | Browser | ✅ |
-| Player detection and tracking | YOLOX (ONNX) + ByteTrack, local Python | ✅ Real inference, checked on real (non-GAA) footage; not yet measured on Gaelic football footage ([details](docs/research/test-footage.md)) |
+| Player detection and tracking | YOLOX (ONNX) + ByteTrack, local Python | ✅ Real inference, checked on real pedestrian and basketball footage; not yet measured on Gaelic football footage ([details](docs/research/test-footage.md)) |
 | Single-frame person detection in the browser | YOLOX-nano via onnxruntime-web (WASM), self-hosted | ⚠️ Experimental: about 0.2 s per frame, detection only |
 | Team grouping by jersey colour | Colour clustering (k-means) | ⚠️ Inferred; you map cluster A/B to home/away |
 | Visible-ball detection | YOLOX COCO "sports ball" class | ⚠️ Inferred; unreliable on wide shots of a small ball |

@@ -26,8 +26,9 @@ def render_frame(frame: np.ndarray, rows, team) -> np.ndarray:
             if not idx:
                 continue
             sub = det[idx]
-            out = sv.BoxAnnotator(color=PALETTE[lab], thickness=2).annotate(out, sub)
-            out = sv.LabelAnnotator(color=PALETTE[lab], text_scale=0.4, text_padding=3).annotate(
+            out = sv.BoxAnnotator(color=PALETTE[lab], thickness=2, color_lookup=sv.ColorLookup.INDEX).annotate(out, sub)
+            out = sv.LabelAnnotator(color=PALETTE[lab], text_scale=0.4, text_padding=3,
+                                    color_lookup=sv.ColorLookup.INDEX).annotate(
                 out, sub, labels=[f"#{t}{(' ' + lab) if lab else ''}" for t in sub.tracker_id])
     for r in rows:
         if r.cls == "ball":

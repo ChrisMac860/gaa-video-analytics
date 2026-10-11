@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en-IE">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="Open-source Gaelic football video tagging and match statistics. Your video never leaves your device." />
+    <meta name="color-scheme" content="light" />
+    <link rel="icon" type="image/svg+xml" href="./favicon.svg" />
+    <title>GAA Video Analytics</title>
+  </head>
+  <body>
+    <a class="skip" href="#main">Skip to content</a>
+    <header class="app-chrome topbar">
+      <div class="brand"><span class="logo" aria-hidden="true"></span><div><strong>GAA Video Analytics</strong><small id="match-title"></small></div></div>
+      <div class="privacy-chip" title="Video is played from your device by the browser; it is never uploaded">Video stays on your device</div>
+    </header>
+    <div id="banners" class="app-chrome"></div>
+    <nav class="app-chrome tabs" id="tabs" role="tablist" aria-label="Sections"></nav>
+    <main id="main" tabindex="-1">
+      <section id="panel-setup" class="tab-panel" role="tabpanel" aria-labelledby="tab-setup"></section>
+      <section id="panel-review" class="tab-panel" role="tabpanel" aria-labelledby="tab-review" hidden></section>
+      <section id="panel-cv" class="tab-panel" role="tabpanel" aria-labelledby="tab-cv" hidden></section>
+      <section id="panel-stats" class="tab-panel" role="tabpanel" aria-labelledby="tab-stats" hidden></section>
+      <section id="panel-report" class="tab-panel" role="tabpanel" aria-labelledby="tab-report" hidden></section>
+      <section id="panel-data" class="tab-panel" role="tabpanel" aria-labelledby="tab-data" hidden></section>
+    </main>
+    <div id="toasts" class="toasts" aria-live="polite" aria-atomic="false"></div>
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>

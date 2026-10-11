@@ -1,0 +1,10 @@
+models/
+*.mp4
+*.csv
+*.onnx
+__pycache__/
+*.egg-info/
+.pytest_cache/
+/out/
+/samples/
+/analysis.json

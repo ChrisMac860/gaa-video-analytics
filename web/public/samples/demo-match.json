@@ -1,0 +1,729 @@
+{
+  "schemaVersion": "1.0",
+  "sport": "gaelic_football",
+  "demo": true,
+  "match": {
+    "title": "DEMO – fictional match for illustration only",
+    "date": "2026-05-17",
+    "venue": "Fictional Park",
+    "competition": "Demo League (fictional)",
+    "home": {
+      "name": "Ballymore",
+      "colour": "#0b6e4f"
+    },
+    "away": {
+      "name": "Glenview",
+      "colour": "#b42318"
+    },
+    "ruleset": "gaa-football-2025"
+  },
+  "video": {
+    "profile": "veo",
+    "durationSec": 4800
+  },
+  "coverage": {
+    "scores": true,
+    "shots": true,
+    "kickouts": true,
+    "turnovers": false,
+    "frees": false,
+    "cards": true
+  },
+  "events": [
+    {
+      "id": "demo_001",
+      "t": 30,
+      "type": "period_start",
+      "period": "H1",
+      "provenance": {
+        "source": "manual",
+        "status": "verified"
+      }
+    },
+    {
+      "id": "demo_002",
+      "t": 95,
+      "type": "shot",
+      "team": "home",
+      "outcome": "point",
+      "shotType": "play",
+      "outsideArc": false,
+      "period": "H1",
+      "player": "11",
+      "provenance": {
+        "source": "manual",
+        "status": "verified"
+      }
+    },
+    {
+      "id": "demo_003",
+      "t": 120,
+      "type": "kickout",
+      "team": "away",
+      "kickoutOutcome": "won",
+      "kickoutLength": "short",
+      "contested": false,
+      "period": "H1",
+      "provenance": {
+        "source": "manual",
+        "status": "verified"
+      }
+    },
+    {
+      "id": "demo_004",
+      "t": 210,
+      "type": "shot",
+      "team": "away",
+      "outcome": "wide",
+      "shotType": "play",
+      "outsideArc": true,
+      "period": "H1",
+      "provenance": {
+        "source": "manual",
+        "status": "verified"
+      }
+    },
+    {
+      "id": "demo_005",
+      "t": 230,
+      "type": "kickout",
+      "team": "home",
+      "kickoutOutcome": "lost",
+      "kickoutLength": "long",
+      "contested": true,
+      "period": "H1",
+      "provenance": {
+        "source": "manual",
+        "status": "verified"
+      }
+    },
+    {
+      "id": "demo_006",
+      "t": 330,
+      "type": "shot",
+      "team": "away",
+      "outcome": "two_point",
+      "shotType": "play",
+      "outsideArc": true,
+      "period": "H1",
+      "player": "12",
+      "provenance": {
+        "source": "manual",
+        "status": "verified"
+      }
+    },
+    {
+      "id": "demo_007",
+      "t": 350,
+      "type": "kickout",
+      "team": "home",
+      "kickoutOutcome": "won",
+      "kickoutLength": "short",
+      "contested": false,
+      "period": "H1",
+      "provenance": {
+        "source": "manual",
+        "status": "verified"
+      }
+    },
+    {
+      "id": "demo_008",
+      "t": 470,
+      "type": "shot",
+      "team": "home",
+      "outcome": "point",
+      "shotType": "free",
+      "outsideArc": false,
+      "period": "H1",
+      "player": "14",
+      "provenance": {
+        "source": "manual",
+        "status": "verified"
+      }
+    },
+    {
+      "id": "demo_009",
+      "t": 490,
+      "type": "kickout",
+      "team": "away",
+      "kickoutOutcome": "won",
+      "kickoutLength": "long",
+      "contested": true,
+      "period": "H1",
+      "provenance": {
+        "source": "manual",
+        "status": "verified"
+      }
+    },
+    {
+      "id": "demo_010",
+      "t": 600,
+      "type": "shot",
+      "team": "away",
+      "outcome": "saved",
+      "shotType": "play",
+      "outsideArc": false,
+      "period": "H1",
+      "provenance": {
+        "source": "manual",
+        "status": "verified"
+      }
+    },
+    {
+      "id": "demo_011",
+      "t": 720,
+      "type": "shot",
+      "team": "home",
+      "outcome": "goal",
+      "shotType": "play",
+      "outsideArc": false,
+      "period": "H1",
+      "player": "13",
+      "provenance": {
+        "source": "manual",
+        "status": "verified"
+      }
+    },
+    {
+      "id": "demo_012",
+      "t": 745,
+      "type": "kickout",
+      "team": "away",
+      "kickoutOutcome": "lost",
+      "kickoutLength": "long",
+      "contested": true,
+      "period": "H1",
+      "provenance": {
+        "source": "manual",
+        "status": "verified"
+      }
+    },
+    {
+      "id": "demo_013",
+      "t": 800,
+      "type": "shot",
+      "team": "home",
+      "outcome": "wide",
+      "shotType": "play",
+      "outsideArc": true,
+      "period": "H1",
+      "provenance": {
+        "source": "manual",
+        "status": "verified"
+      }
+    },
+    {
+      "id": "demo_014",
+      "t": 860,
+      "type": "card",
+      "team": "away",
+      "card": "yellow",
+      "player": "6",
+      "period": "H1",
+      "provenance": {
+        "source": "manual",
+        "status": "verified"
+      }
+    },
+    {
+      "id": "demo_015",
+      "t": 905,
+      "type": "shot",
+      "team": "home",
+      "outcome": "two_point",
+      "shotType": "free",
+      "outsideArc": true,
+      "period": "H1",
+      "player": "14",
+      "provenance": {
+        "source": "manual",
+        "status": "verified"
+      }
+    },
+    {
+      "id": "demo_016",
+      "t": 925,
+      "type": "kickout",
+      "team": "away",
+      "kickoutOutcome": "won",
+      "kickoutLength": "short",
+      "contested": false,
+      "period": "H1",
+      "provenance": {
+        "source": "manual",
+        "status": "verified"
+      }
+    },
+    {
+      "id": "demo_017",
+      "t": 1040,
+      "type": "shot",
+      "team": "away",
+      "outcome": "point",
+      "shotType": "play",
+      "outsideArc": false,
+      "period": "H1",
+      "player": "10",
+      "provenance": {
+        "source": "manual",
+        "status": "verified"
+      }
+    },
+    {
+      "id": "demo_018",
+      "t": 1060,
+      "type": "kickout",
+      "team": "home",
+      "kickoutOutcome": "won",
+      "kickoutLength": "short",
+      "contested": false,
+      "period": "H1",
+      "provenance": {
+        "source": "manual",
+        "status": "verified"
+      }
+    },
+    {
+      "id": "demo_019",
+      "t": 1190,
+      "type": "shot",
+      "team": "home",
+      "outcome": "short",
+      "shotType": "play",
+      "outsideArc": true,
+      "period": "H1",
+      "provenance": {
+        "source": "manual",
+        "status": "verified"
+      }
+    },
+    {
+      "id": "demo_020",
+      "t": 1300,
+      "type": "shot",
+      "team": "away",
+      "outcome": "wide",
+      "shotType": "free",
+      "outsideArc": true,
+      "period": "H1",
+      "provenance": {
+        "source": "manual",
+        "status": "verified"
+      }
+    },
+    {
+      "id": "demo_021",
+      "t": 1420,
+      "type": "shot",
+      "team": "away",
+      "outcome": "point",
+      "shotType": "mark",
+      "outsideArc": false,
+      "period": "H1",
+      "player": "14",
+      "provenance": {
+        "source": "manual",
+        "status": "verified"
+      }
+    },
+    {
+      "id": "demo_022",
+      "t": 1440,
+      "type": "kickout",
+      "team": "home",
+      "kickoutOutcome": "lost",
+      "kickoutLength": "long",
+      "contested": true,
+      "period": "H1",
+      "provenance": {
+        "source": "manual",
+        "status": "verified"
+      }
+    },
+    {
+      "id": "demo_023",
+      "t": 1560,
+      "type": "shot",
+      "team": "home",
+      "outcome": "blocked",
+      "shotType": "play",
+      "outsideArc": false,
+      "period": "H1",
+      "provenance": {
+        "source": "manual",
+        "status": "verified"
+      }
+    },
+    {
+      "id": "demo_024",
+      "t": 1700,
+      "type": "shot",
+      "team": "home",
+      "outcome": "point",
+      "shotType": "play",
+      "outsideArc": false,
+      "period": "H1",
+      "player": "9",
+      "provenance": {
+        "source": "manual",
+        "status": "verified"
+      }
+    },
+    {
+      "id": "demo_025",
+      "t": 1720,
+      "type": "kickout",
+      "team": "away",
+      "kickoutOutcome": "won",
+      "kickoutLength": "long",
+      "contested": true,
+      "period": "H1",
+      "provenance": {
+        "source": "manual",
+        "status": "verified"
+      }
+    },
+    {
+      "id": "demo_026",
+      "t": 1830,
+      "type": "shot",
+      "team": "away",
+      "outcome": "two_point",
+      "shotType": "play",
+      "outsideArc": true,
+      "period": "H1",
+      "player": "11",
+      "provenance": {
+        "source": "manual",
+        "status": "verified"
+      }
+    },
+    {
+      "id": "demo_027",
+      "t": 2070,
+      "type": "period_end",
+      "period": "H1",
+      "provenance": {
+        "source": "manual",
+        "status": "verified"
+      }
+    },
+    {
+      "id": "demo_028",
+      "t": 2700,
+      "type": "period_start",
+      "period": "H2",
+      "provenance": {
+        "source": "manual",
+        "status": "verified"
+      }
+    },
+    {
+      "id": "demo_029",
+      "t": 2790,
+      "type": "shot",
+      "team": "away",
+      "outcome": "point",
+      "shotType": "free",
+      "outsideArc": false,
+      "period": "H2",
+      "player": "14",
+      "provenance": {
+        "source": "manual",
+        "status": "verified"
+      }
+    },
+    {
+      "id": "demo_030",
+      "t": 2810,
+      "type": "kickout",
+      "team": "home",
+      "kickoutOutcome": "won",
+      "kickoutLength": "short",
+      "contested": false,
+      "period": "H2",
+      "provenance": {
+        "source": "manual",
+        "status": "verified"
+      }
+    },
+    {
+      "id": "demo_031",
+      "t": 2950,
+      "type": "shot",
+      "team": "home",
+      "outcome": "post",
+      "shotType": "play",
+      "outsideArc": false,
+      "period": "H2",
+      "provenance": {
+        "source": "manual",
+        "status": "verified"
+      }
+    },
+    {
+      "id": "demo_032",
+      "t": 3080,
+      "type": "shot",
+      "team": "home",
+      "outcome": "point",
+      "shotType": "play",
+      "outsideArc": false,
+      "period": "H2",
+      "player": "11",
+      "provenance": {
+        "source": "manual",
+        "status": "verified"
+      }
+    },
+    {
+      "id": "demo_033",
+      "t": 3100,
+      "type": "kickout",
+      "team": "away",
+      "kickoutOutcome": "lost",
+      "kickoutLength": "long",
+      "contested": true,
+      "period": "H2",
+      "provenance": {
+        "source": "manual",
+        "status": "verified"
+      }
+    },
+    {
+      "id": "demo_034",
+      "t": 3240,
+      "type": "shot",
+      "team": "home",
+      "outcome": "wide",
+      "shotType": "45",
+      "outsideArc": true,
+      "period": "H2",
+      "provenance": {
+        "source": "manual",
+        "status": "verified"
+      }
+    },
+    {
+      "id": "demo_035",
+      "t": 3390,
+      "type": "shot",
+      "team": "away",
+      "outcome": "goal",
+      "shotType": "penalty",
+      "outsideArc": false,
+      "period": "H2",
+      "player": "14",
+      "provenance": {
+        "source": "manual",
+        "status": "verified"
+      }
+    },
+    {
+      "id": "demo_036",
+      "t": 3410,
+      "type": "kickout",
+      "team": "home",
+      "kickoutOutcome": "won",
+      "kickoutLength": "long",
+      "contested": true,
+      "period": "H2",
+      "provenance": {
+        "source": "manual",
+        "status": "verified"
+      }
+    },
+    {
+      "id": "demo_037",
+      "t": 3555,
+      "type": "shot",
+      "team": "home",
+      "outcome": "two_point",
+      "shotType": "play",
+      "outsideArc": true,
+      "period": "H2",
+      "player": "12",
+      "provenance": {
+        "source": "manual",
+        "status": "verified"
+      }
+    },
+    {
+      "id": "demo_038",
+      "t": 3575,
+      "type": "kickout",
+      "team": "away",
+      "kickoutOutcome": "won",
+      "kickoutLength": "short",
+      "contested": false,
+      "period": "H2",
+      "provenance": {
+        "source": "manual",
+        "status": "verified"
+      }
+    },
+    {
+      "id": "demo_039",
+      "t": 3700,
+      "type": "shot",
+      "team": "away",
+      "outcome": "wide",
+      "shotType": "play",
+      "outsideArc": true,
+      "period": "H2",
+      "provenance": {
+        "source": "manual",
+        "status": "verified"
+      }
+    },
+    {
+      "id": "demo_040",
+      "t": 3790,
+      "type": "card",
+      "team": "home",
+      "card": "black",
+      "player": "4",
+      "period": "H2",
+      "provenance": {
+        "source": "manual",
+        "status": "verified"
+      }
+    },
+    {
+      "id": "demo_041",
+      "t": 3900,
+      "type": "shot",
+      "team": "home",
+      "outcome": "point",
+      "shotType": "free",
+      "outsideArc": false,
+      "period": "H2",
+      "player": "14",
+      "provenance": {
+        "source": "manual",
+        "status": "verified"
+      }
+    },
+    {
+      "id": "demo_042",
+      "t": 3920,
+      "type": "kickout",
+      "team": "away",
+      "kickoutOutcome": "lost",
+      "kickoutLength": "long",
+      "contested": true,
+      "period": "H2",
+      "provenance": {
+        "source": "manual",
+        "status": "verified"
+      }
+    },
+    {
+      "id": "demo_043",
+      "t": 4050,
+      "type": "shot",
+      "team": "away",
+      "outcome": "point",
+      "shotType": "play",
+      "outsideArc": false,
+      "period": "H2",
+      "player": "15",
+      "provenance": {
+        "source": "manual",
+        "status": "verified"
+      }
+    },
+    {
+      "id": "demo_044",
+      "t": 4070,
+      "type": "kickout",
+      "team": "home",
+      "kickoutOutcome": "won",
+      "kickoutLength": "short",
+      "contested": false,
+      "period": "H2",
+      "provenance": {
+        "source": "manual",
+        "status": "verified"
+      }
+    },
+    {
+      "id": "demo_045",
+      "t": 4200,
+      "type": "shot",
+      "team": "home",
+      "outcome": "point",
+      "shotType": "play",
+      "outsideArc": false,
+      "period": "H2",
+      "player": "10",
+      "provenance": {
+        "source": "manual",
+        "status": "verified"
+      }
+    },
+    {
+      "id": "demo_046",
+      "t": 4330,
+      "type": "shot",
+      "team": "away",
+      "outcome": "wide",
+      "shotType": "play",
+      "outsideArc": false,
+      "period": "H2",
+      "provenance": {
+        "source": "manual",
+        "status": "verified"
+      }
+    },
+    {
+      "id": "demo_047",
+      "t": 4420,
+      "type": "note",
+      "note": "Example note: momentum shift after substitution (fictional).",
+      "period": "H2",
+      "provenance": {
+        "source": "manual",
+        "status": "verified"
+      }
+    },
+    {
+      "id": "demo_048",
+      "t": 4500,
+      "type": "shot",
+      "team": "home",
+      "outcome": "saved",
+      "shotType": "play",
+      "outsideArc": false,
+      "period": "H2",
+      "provenance": {
+        "source": "manual",
+        "status": "verified"
+      }
+    },
+    {
+      "id": "demo_049",
+      "t": 4610,
+      "type": "shot",
+      "team": "away",
+      "outcome": "wide",
+      "shotType": "free",
+      "outsideArc": true,
+      "period": "H2",
+      "provenance": {
+        "source": "manual",
+        "status": "verified"
+      }
+    },
+    {
+      "id": "demo_050",
+      "t": 4700,
+      "type": "period_end",
+      "period": "H2",
+      "provenance": {
+        "source": "manual",
+        "status": "verified"
+      }
+    }
+  ]
+}

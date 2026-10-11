@@ -1,0 +1,14 @@
+node_modules/
+web/dist/
+web/public/models/
+processor/models/
+processor/outputs/
+*.mp4
+*.mov
+*.avi
+*.mkv
+__pycache__/
+*.egg-info/
+.pytest_cache/
+.venv/
+.DS_Store

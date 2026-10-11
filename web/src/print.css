@@ -1,0 +1,17 @@
+@page { size: A4; margin: 14mm; }
+@media print {
+  html, body { background: #fff !important; color: #000; font-size: 11pt; }
+  .app-chrome, .noprint, .toasts, .skip, #banners, .tabs, .topbar { display: none !important; }
+  .tab-panel { display: none !important; }
+  #panel-report { display: block !important; }
+  #panel-report[hidden] { display: block !important; }
+  main { padding: 0; max-width: none; }
+  .report { border: 0; padding: 0; max-width: none; margin: 0; overflow: visible; }
+  .report section { break-inside: avoid; }
+  .tbl th, .tbl td { padding: 3pt 6pt; border-bottom: 0.5pt solid #999; }
+  .tbl thead th { background: #eee !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  .watermark { position: fixed; color: rgba(180, 35, 24, .18); -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  .warn-banner { border: 1pt solid #8a4b00; background: #fff !important; }
+  .is-unknown { background: none; border: 0.5pt dashed #666; }
+  a { color: inherit; text-decoration: none; }
+}

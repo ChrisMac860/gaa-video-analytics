@@ -1,0 +1,225 @@
+{
+ "schemaVersion": "1.0",
+ "sport": "gaelic_football",
+ "match": {
+  "home": {
+   "name": "Home"
+  },
+  "away": {
+   "name": "Away"
+  },
+  "ruleset": "gaa-football-2025"
+ },
+ "video": {
+  "fileName": "vtest.avi",
+  "durationSec": 79.5,
+  "fps": 10.0,
+  "width": 768,
+  "height": 576,
+  "profile": "generic_mp4"
+ },
+ "coverage": {
+  "scores": false,
+  "shots": false,
+  "kickouts": false,
+  "turnovers": false,
+  "frees": false,
+  "cards": false
+ },
+ "events": [],
+ "cv": {
+  "run": {
+   "processor": "gaa_cv",
+   "version": "0.1.0",
+   "detector": {
+    "model": "yolox_s",
+    "licence": "Apache-2.0",
+    "inputSize": 640,
+    "confThreshold": 0.35
+   },
+   "tracker": "ByteTrack (supervision)",
+   "frameStride": 2,
+   "framesAnalysed": 100,
+   "elapsedSec": 10.38,
+   "capabilities": {
+    "person_detection": "implemented",
+    "person_tracking": "implemented",
+    "ball_detection": "experimental",
+    "team_clustering": "experimental",
+    "possession_candidates": "experimental",
+    "ball_visible_segments": "implemented",
+    "shot_recognition": "not_implemented",
+    "score_recognition": "not_implemented",
+    "kickout_recognition": "not_implemented",
+    "pitch_calibration": "not_implemented"
+   }
+  },
+  "frames": [
+   {
+    "t": 0.0,
+    "persons": 3,
+    "balls": 0,
+    "teamA": 0,
+    "teamB": 2
+   },
+   {
+    "t": 0.2,
+    "persons": 3,
+    "balls": 0,
+    "teamA": 0,
+    "teamB": 2
+   },
+   {
+    "t": 0.4,
+    "persons": 2,
+    "balls": 0,
+    "teamA": 0,
+    "teamB": 2
+   },
+   {
+    "t": 0.6,
+    "persons": 3,
+    "balls": 0,
+    "teamA": 0,
+    "teamB": 3
+   },
+   {
+    "t": 0.8,
+    "persons": 3,
+    "balls": 0,
+    "teamA": 0,
+    "teamB": 3
+   },
+   {
+    "t": 1.0,
+    "persons": 3,
+    "balls": 0,
+    "teamA": 0,
+    "teamB": 3
+   },
+   {
+    "t": 1.2,
+    "persons": 4,
+    "balls": 0,
+    "teamA": 0,
+    "teamB": 4
+   },
+   {
+    "t": 1.4,
+    "persons": 3,
+    "balls": 0,
+    "teamA": 0,
+    "teamB": 3
+   },
+   {
+    "t": 1.6,
+    "persons": 4,
+    "balls": 0,
+    "teamA": 0,
+    "teamB": 4
+   },
+   {
+    "t": 1.8,
+    "persons": 3,
+    "balls": 0,
+    "teamA": 0,
+    "teamB": 3
+   },
+   {
+    "t": 2.0,
+    "persons": 4,
+    "balls": 0,
+    "teamA": 0,
+    "teamB": 4
+   },
+   {
+    "t": 2.2,
+    "persons": 4,
+    "balls": 0,
+    "teamA": 0,
+    "teamB": 4
+   },
+   {
+    "t": 2.4,
+    "persons": 5,
+    "balls": 0,
+    "teamA": 0,
+    "teamB": 5
+   },
+   {
+    "t": 2.6,
+    "persons": 4,
+    "balls": 0,
+    "teamA": 0,
+    "teamB": 4
+   },
+   {
+    "t": 2.8,
+    "persons": 3,
+    "balls": 0,
+    "teamA": 0,
+    "teamB": 3
+   },
+   {
+    "t": 3.0,
+    "persons": 4,
+    "balls": 0,
+    "teamA": 0,
+    "teamB": 3
+   },
+   {
+    "t": 3.2,
+    "persons": 3,
+    "balls": 0,
+    "teamA": 0,
+    "teamB": 3
+   },
+   {
+    "t": 3.4,
+    "persons": 3,
+    "balls": 0,
+    "teamA": 0,
+    "teamB": 3
+   },
+   {
+    "t": 3.6,
+    "persons": 4,
+    "balls": 0,
+    "teamA": 0,
+    "teamB": 4
+   },
+   {
+    "t": 3.8,
+    "persons": 4,
+    "balls": 0,
+    "teamA": 0,
+    "teamB": 4
+   }
+  ],
+  "tracks": {
+   "total": 24,
+   "teamA": 1,
+   "teamB": 17,
+   "unassigned": 6
+  },
+  "candidates": [
+   {
+    "id": "cand_test_1",
+    "t": 3.2,
+    "kind": "possession_change",
+    "teamCluster": "A",
+    "confidence": 0.4,
+    "status": "inferred",
+    "detail": "TEST FIXTURE: hand-written candidate injected into real processor output to exercise the review UI"
+   }
+  ],
+  "warnings": [
+   "No sports-ball detections: the ball is small and often missed by COCO detectors.",
+   "TEST FIXTURE: candidate list is hand-written for UI testing, not model output."
+  ],
+  "teamColours": {
+   "A": "#b0c2d2",
+   "B": "#141115"
+  }
+ }
+}

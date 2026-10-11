@@ -1,0 +1,162 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/ChrisMac860/gaa-video-analytics/schema/analysis.schema.json",
+  "title": "GAA Video Analytics analysis document",
+  "description": "Contract between the local CV processor, the web app and exports. Mirrors web/src/core/types.ts. CV output lives in `cv.candidates` and never in `events` until a person accepts it.",
+  "type": "object",
+  "required": ["schemaVersion", "match", "events"],
+  "properties": {
+    "schemaVersion": { "type": "string", "pattern": "^1\\." },
+    "sport": { "const": "gaelic_football" },
+    "demo": { "type": "boolean", "description": "True for fictional demonstration data." },
+    "match": {
+      "type": "object",
+      "required": ["home", "away"],
+      "properties": {
+        "title": { "type": "string" },
+        "date": { "type": "string" },
+        "venue": { "type": "string" },
+        "competition": { "type": "string" },
+        "home": { "$ref": "#/$defs/team" },
+        "away": { "$ref": "#/$defs/team" },
+        "ruleset": { "type": "string", "default": "gaa-football-2025" }
+      }
+    },
+    "video": {
+      "type": "object",
+      "properties": {
+        "fileName": { "type": "string" },
+        "durationSec": { "type": "number", "minimum": 0 },
+        "fps": { "type": "number", "minimum": 0 },
+        "width": { "type": "integer" },
+        "height": { "type": "integer" },
+        "profile": { "enum": ["veo", "generic_mp4", "phone", "fixed_camera", "other"] }
+      }
+    },
+    "coverage": {
+      "description": "Categories a person declares as fully tagged. Stats in other categories are reported as unknown.",
+      "type": "object",
+      "properties": {
+        "scores": { "type": "boolean" },
+        "shots": { "type": "boolean" },
+        "kickouts": { "type": "boolean" },
+        "turnovers": { "type": "boolean" },
+        "frees": { "type": "boolean" },
+        "cards": { "type": "boolean" }
+      }
+    },
+    "events": { "type": "array", "items": { "$ref": "#/$defs/event" } },
+    "cv": { "$ref": "#/$defs/cv" }
+  },
+  "$defs": {
+    "team": {
+      "type": "object",
+      "required": ["name"],
+      "properties": { "name": { "type": "string" }, "colour": { "type": "string" } }
+    },
+    "provenance": {
+      "type": "object",
+      "required": ["source", "status"],
+      "properties": {
+        "source": { "enum": ["manual", "cv"] },
+        "status": { "enum": ["observed", "inferred", "verified", "unknown"] },
+        "confidence": { "type": "number", "minimum": 0, "maximum": 1 },
+        "candidateId": { "type": "string" },
+        "detail": { "type": "string" }
+      }
+    },
+    "event": {
+      "type": "object",
+      "required": ["id", "t", "type", "provenance"],
+      "properties": {
+        "id": { "type": "string", "minLength": 1 },
+        "t": { "type": "number", "minimum": 0, "description": "Seconds from the start of the video file." },
+        "period": { "enum": ["H1", "H2", "ET1", "ET2"] },
+        "team": { "enum": ["home", "away"] },
+        "type": { "enum": ["shot", "kickout", "turnover", "free_won", "card", "period_start", "period_end", "note"] },
+        "player": { "type": "string" },
+        "outcome": { "enum": ["goal", "two_point", "point", "wide", "short", "saved", "blocked", "post"] },
+        "shotType": { "enum": ["play", "free", "45", "mark", "penalty", "sideline"] },
+        "outsideArc": { "type": "boolean" },
+        "kickoutOutcome": { "enum": ["won", "lost"] },
+        "kickoutLength": { "enum": ["short", "long"] },
+        "contested": { "type": "boolean" },
+        "cause": { "enum": ["tackle", "interception", "handling_error", "foul", "kick_away", "other"] },
+        "card": { "enum": ["yellow", "black", "red"] },
+        "pitch": {
+          "type": "object",
+          "properties": { "x": { "type": "number", "minimum": 0, "maximum": 1 }, "y": { "type": "number", "minimum": 0, "maximum": 1 } }
+        },
+        "note": { "type": "string" },
+        "provenance": { "$ref": "#/$defs/provenance" }
+      },
+      "allOf": [
+        { "if": { "properties": { "type": { "const": "shot" } } }, "then": { "required": ["outcome", "team"] } },
+        { "if": { "properties": { "type": { "enum": ["kickout", "turnover"] } } }, "then": { "required": ["team"] } }
+      ]
+    },
+    "candidate": {
+      "type": "object",
+      "required": ["id", "t", "kind", "confidence", "status", "detail"],
+      "properties": {
+        "id": { "type": "string" },
+        "t": { "type": "number", "minimum": 0 },
+        "tEnd": { "type": "number", "minimum": 0 },
+        "kind": { "type": "string" },
+        "teamCluster": { "enum": ["A", "B"] },
+        "confidence": { "type": "number", "minimum": 0, "maximum": 1 },
+        "status": { "enum": ["inferred", "observed"] },
+        "detail": { "type": "string" },
+        "review": { "enum": ["accepted", "rejected"] }
+      }
+    },
+    "cv": {
+      "type": "object",
+      "required": ["run", "candidates"],
+      "properties": {
+        "run": {
+          "type": "object",
+          "required": ["processor", "version", "detector", "tracker"],
+          "properties": {
+            "processor": { "type": "string" },
+            "version": { "type": "string" },
+            "detector": {
+              "type": "object",
+              "properties": {
+                "model": { "type": "string" },
+                "licence": { "type": "string" },
+                "inputSize": { "type": "integer" },
+                "confThreshold": { "type": "number" }
+              }
+            },
+            "tracker": { "type": "string" },
+            "frameStride": { "type": "integer", "minimum": 1 },
+            "framesAnalysed": { "type": "integer", "minimum": 0 },
+            "elapsedSec": { "type": "number", "minimum": 0 },
+            "capabilities": {
+              "type": "object",
+              "additionalProperties": { "enum": ["implemented", "experimental", "not_implemented"] }
+            }
+          }
+        },
+        "frames": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "t": { "type": "number" },
+              "persons": { "type": "integer" },
+              "balls": { "type": "integer" },
+              "teamA": { "type": "integer" },
+              "teamB": { "type": "integer" }
+            }
+          }
+        },
+        "tracks": { "type": "object" },
+        "teamColours": { "type": "object" },
+        "candidates": { "type": "array", "items": { "$ref": "#/$defs/candidate" } },
+        "warnings": { "type": "array", "items": { "type": "string" } }
+      }
+    }
+  }
+}

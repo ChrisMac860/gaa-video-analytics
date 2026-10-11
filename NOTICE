@@ -1,0 +1,14 @@
+GAA Video Analytics
+Copyright 2026 GAA Video Analytics contributors
+
+This product is licensed under the Apache License, Version 2.0 (see LICENSE).
+
+Third-party components (not bundled in this repository unless stated):
+- YOLOX and its released ONNX weights (Megvii), Apache-2.0
+  https://github.com/Megvii-BaseDetection/YOLOX
+  The weights are downloaded by scripts at install/build time. The GitHub Pages
+  build downloads yolox_nano.onnx and serves it with the site.
+- supervision (Roboflow), MIT: https://github.com/roboflow/supervision
+- OpenCV, Apache-2.0: https://opencv.org
+- ONNX Runtime and onnxruntime-web (Microsoft), MIT: https://github.com/microsoft/onnxruntime
+- NumPy, BSD-3-Clause

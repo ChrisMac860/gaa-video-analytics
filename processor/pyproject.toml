@@ -1,0 +1,26 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "gaa-cv"
+version = "0.1.0"
+description = "Local computer-vision processor for Gaelic football video: detection, tracking, team clustering, candidate events."
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "Apache-2.0" }
+dependencies = [
+  "numpy",
+  "opencv-python-headless",
+  "onnxruntime",
+  "supervision>=0.25,<0.31",  # ByteTrack lives in supervision until 0.31 (deprecated, still shipped)
+]
+
+[project.optional-dependencies]
+dev = ["pytest", "jsonschema"]
+
+[tool.setuptools.packages.find]
+include = ["gaa_cv*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

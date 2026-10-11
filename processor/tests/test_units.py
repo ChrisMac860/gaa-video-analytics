@@ -132,3 +132,20 @@ def test_ball_segments():
     frames += [mk(2.0 + k * 0.1, (5, 5, 0.4), []) for k in range(2)]  # too short
     s = CandidateExtractor().ball_segments(frames)
     assert len(s) == 1 and s[0]["status"] == "observed" and s[0]["kind"] == "ball_visible_segment"
+
+
+def test_render_frame_draws_people_and_ball():
+    """Regression: annotating frames that contain people used to crash (no class_id for colour lookup)."""
+    from gaa_cv.annotate import render_frame
+    from gaa_cv.pipeline import Row
+
+    class Team:
+        def label(self, tid):
+            return {1: "A", 2: "B"}.get(tid)
+
+    frame = np.zeros((120, 160, 3), np.uint8)
+    rows = [Row(0, 0.0, 1, "person", (10, 10, 40, 90), 0.9), Row(0, 0.0, 2, "person", (60, 10, 90, 90), 0.8),
+            Row(0, 0.0, 3, "person", (100, 10, 130, 90), 0.7), Row(0, 0.0, -1, "ball", (140, 100, 146, 106), 0.3)]
+    out = render_frame(frame, rows, Team())
+    assert out.shape == frame.shape and out.any()
+    assert not frame.any()  # input untouched
